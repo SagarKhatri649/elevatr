@@ -12,22 +12,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 
-      backdrop-blur-lg bg-black/40 border-b border-white/10">
-      <div className="container px-4 mx-auto relative lg:text-sm">
+    <nav
+      className="sticky top-0 z-50 py-3 px-4 
+      bg-black/70 backdrop-blur-md border-b border-white/10"
+    >
+      <div className="container mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           {/* Logo + Brand */}
-          <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl font-semibold tracking-tight text-white">
+          <div className="flex items-center flex-shrink-0 ml-6">
+            <img
+              src={logo}
+              alt="Elevatr Logo"
+              className="h-8 w-8 mr-3"
+            />
+            <span className="text-lg font-semibold tracking-tight text-foreground">
               Elevatr
             </span>
           </div>
 
+
           {/* Desktop Nav */}
-          <ul className="hidden lg:flex ml-14 space-x-12 text-white/80">
+          <ul className="hidden lg:flex ml-14 space-x-12  ">
             {navItems.map((item, index) => (
-              <li key={index} className="hover:text-white transition">
+              <li key={index} className="hover:text-foreground transition">
                 <a href={item.href}>{item.label}</a>
               </li>
             ))}
@@ -37,17 +44,16 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-center space-x-6 items-center">
             <a
               href="#"
-              className="py-2 px-4 rounded-xl border border-white/20 
-                text-white/80 hover:text-white hover:border-white/40 
+              className="py-2 px-4 border border-white/20 
+                  hover:text-foreground hover:border-white/40 
                 transition"
             >
               Sign In
             </a>
             <a
               href="#"
-              className="py-2 px-4 rounded-xl 
-                bg-gradient-to-r from-orange-500 to-orange-700 
-                text-white shadow-lg shadow-orange-900/30 hover:opacity-90 
+              className="py-2 px-4 bg-gradient-accent 
+                text-foreground shadow-md shadow-black/30 hover:opacity-90 
                 transition"
             >
               Create an account
@@ -58,7 +64,7 @@ const Navbar = () => {
           <div className="lg:hidden md:flex flex-col justify-end">
             <button
               onClick={toggleNavbar}
-              className="text-white hover:text-orange-400 transition"
+              className="text-foreground hover:text-accent-foreground transition"
             >
               {mobileDrawerOpen ? <X /> : <Menu />}
             </button>
@@ -67,14 +73,16 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileDrawerOpen && (
-          <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-xl 
-            flex flex-col justify-center items-center lg:hidden">
-            <ul className="space-y-6 text-xl text-white">
+          <div
+            className="fixed inset-0 z-40 bg-black/90 backdrop-blur-md 
+            flex flex-col justify-center items-center lg:hidden"
+          >
+            <ul className="space-y-6 text-xl text-foreground">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
-                    className="hover:text-orange-400 transition"
+                    className="hover:text-accent-foreground transition"
                   >
                     {item.label}
                   </a>
@@ -84,16 +92,16 @@ const Navbar = () => {
             <div className="flex space-x-6 mt-8">
               <a
                 href="#"
-                className="py-2 px-4 rounded-xl border border-white/20 
-                  text-white/80 hover:text-white hover:border-white/40 transition"
+                className="py-2 px-4 border border-white/20 
+                  text-muted hover:text-foreground hover:border-white/40 transition"
               >
                 Sign In
               </a>
               <a
                 href="#"
-                className="py-2 px-4 rounded-xl 
-                  bg-gradient-to-r from-orange-500 to-orange-700 
-                  text-white shadow-lg shadow-orange-900/30 hover:opacity-90 transition"
+                className="py-2 px-4 bg-gradient-accent 
+                  text-foreground shadow-md shadow-black/30 hover:opacity-90 
+                  transition"
               >
                 Create an account
               </a>

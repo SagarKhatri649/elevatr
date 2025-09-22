@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* === Elevtr Project Colors === */
+:root {
+  --color-background: #000000;         /* Base Black */
+  --color-accent: #061622;             /* Dark Blue Accent */
+  --color-accent-foreground: #1c9cf0;  /* Highlight Blue */
+  --color-foreground: #e7e9ea;         /* Main Text */
+  --color-muted: #94a3b8;              /* Muted Gray (support text) */
+}
+
+/* === Base Theme === */
+body {
+  color: var(--color-foreground);
+  background: radial-gradient(
+    circle at top right,              /* moved gradient origin */
+    var(--color-accent) 0%,
+    var(--color-background) 50%,
+    var(--color-background) 100%
+  );
+}
+
+/* Background utilities */
+.bg-base { background-color: var(--color-background); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent-foreground { background-color: var(--color-accent-foreground); }
+
+/* Text utilities */
+.text-foreground { color: var(--color-foreground); }
+.text-muted { color: var(--color-muted); }
+.text-accent { color: var(--color-accent); }
+.text-accent-foreground { color: var(--color-accent-foreground); }
+
+/* Gradient utilities */
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-foreground));
+}
+.text-gradient {
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-foreground));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+/* Strong Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 14px 7px rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}

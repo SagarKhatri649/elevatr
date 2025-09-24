@@ -1,5 +1,6 @@
 import { CheckCircle2, Shield, Rocket } from "lucide-react";
 import { pricingOptions } from "../constants";
+import { motion } from "framer-motion"; // ✅ add motion
 
 const Pricing = () => {
   return (
@@ -20,15 +21,18 @@ const Pricing = () => {
 
           return (
             <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
-              <div
-                className="glass p-10 h-full flex flex-col justify-between 
-                border border-white/10 hover:shadow-lg hover:shadow-black/40 transition"
+              {/* motion.div wrapper */}
+              <motion.div
+                whileHover={{ scale: 1.09 }}   // pop forward
+                transition={{ duration: 0.15, ease: "easeOut" }}
+                className="glass-pricing p-10 h-full flex flex-col justify-between 
+    hover:shadow-xl hover:shadow-black/50 transition"
               >
                 {/* Plan Title */}
                 <p className="text-4xl font-semibold mb-6 text-foreground">
                   {option.title}
                   {option.title === "Pro" && (
-                    <span className="ml-2 text-xl bg-gradient-accent bg-clip-text text-transparent">
+                    <span className="ml-2 text-xl">
                       (Most Popular)
                     </span>
                   )}
@@ -59,11 +63,11 @@ const Pricing = () => {
                 <a
                   href="#"
                   className="inline-flex justify-center items-center text-center w-full h-12 mt-12 
-                  bg-gradient-accent text-foreground font-medium rounded-md shadow-md hover:opacity-90 transition"
+                    bg-gradient-accent text-foreground font-medium rounded-md shadow-md hover:opacity-90 transition"
                 >
                   Subscribe
                 </a>
-              </div>
+              </motion.div>
             </div>
           );
         })}
@@ -73,5 +77,3 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
-

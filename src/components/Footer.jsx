@@ -3,10 +3,10 @@ import { resourcesLinks, platformLinks, communityLinks } from "../constants";
 const Footer = () => {
   return (
     <footer
-      className="mt-24 border-t border-white/10 py-12 px-6 lg:px-12 
-      bg-black/60 backdrop-blur-md"
+      className="mt-16 border-t border-white/10 py-8 px-6 lg:px-12 
+      bg-black/60 backdrop-blur-md "
     >
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 text-muted">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 text-muted  ml-10">
         {/* Resources */}
         <div>
           <h3 className="text-md font-semibold mb-4 text-foreground">
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-muted">
+      <div className="mt-6 pt-2   text-center text-sm text-muted">
         <p>
           © {new Date().getFullYear()} <span className="text-foreground">Elevatr</span>. All rights reserved.
         </p>

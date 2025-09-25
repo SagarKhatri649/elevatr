@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, [nextImage]);
 
   return (
-    <section className="mt-16 lg:mt-10 px-6">
+    <section id="hero" className="mt-16 lg:mt-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12">
         {/* ===== Left: Text block with motion ===== */}
         <motion.div
@@ -32,7 +32,8 @@ const HeroSection = () => {
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
             Elevatr build tools{" "}
-            <span className="text-gradient">for innovators</span>
+            <span className="text-muted">for</span>{" "}
+            <span className="text-gradient">innovators</span>
           </h1>
 
           <p className="mt-6 text-lg text-muted max-w-xl mx-auto lg:mx-0">
@@ -40,14 +41,21 @@ const HeroSection = () => {
             our intuitive development tools.
           </p>
 
+
+          {/* CTA Buttons */}
           <div className="flex justify-center lg:justify-start gap-4 mt-8">
+            {/* Start for free → interactive */}
             <a
               href="#"
               className="py-3 px-6 rounded-md bg-gradient-accent text-foreground 
-                shadow-lg shadow-black/40 hover:opacity-90 transition"
+                shadow-lg shadow-black/40 
+                hover:scale-105 hover:shadow-[0_0_15px_rgba(28,156,240,0.8)] 
+                hover:opacity-95 transition-all duration-200 ease-out"
             >
               Start for free
             </a>
+
+            {/* Documentation → original subtle */}
             <a
               href="#"
               className="py-3 px-6 rounded-md border border-white/20 text-foreground/90 

@@ -4,7 +4,7 @@ const FeatureSection = () => {
   return (
     <section
       id="features"
-      className="relative mt-24 border-b border-white/10 min-h-[800px] px-6 lg:px-12"
+      className="relative mt-24 border-b border-white/5 min-h-[600px] px-6 lg:px-12"
     >
       {/* Section Header */}
       <div className="text-center">
@@ -12,7 +12,7 @@ const FeatureSection = () => {
           Solutions
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide text-foreground">
-          Easily build{" "}
+          Easily <span className="text-muted">build</span>{" "}
           <span className="text-gradient">your ideas</span>
         </h2>
       </div>

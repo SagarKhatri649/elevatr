@@ -49,6 +49,7 @@ body {
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
+
 /* Strong Glass Card Effect */
 .glass-card {
   background: rgba(255, 255, 255, 0.15);
@@ -93,4 +94,61 @@ body {
     transparent,
     rgba(255, 255, 255, 0.3)
   );
+}
+
+/* Testimonial Glass Effect (lighter gradient) */
+
+.glass-testimonial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(28, 156, 240, 0.15), transparent 200%);
+  z-index: -1; /* stays behind content */
+}
+
+.glass-testimonial {
+  background: rgba(255, 255, 255, 0.05); /* very light see-through white */
+  backdrop-filter: blur(40px) saturate(150%);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(255, 255, 255, 0.05); /* soft glow inside */
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+/* Pricing Glass Effect */
+.glass-pricing {
+  background: rgba(255, 255, 255, 0.05); /* subtle transparent white */
+  backdrop-filter: blur(36px) saturate(160%);
+  -webkit-backdrop-filter: blur(36px) saturate(160%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.65),
+    inset 0 0 40px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional blue glow like premium pricing cards */
+.glass-pricing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(28, 156, 240, 0.15),
+    transparent 200%
+  );
+  z-index: -1;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; 
 }
